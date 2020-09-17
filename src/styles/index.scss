@@ -1,0 +1,126 @@
+// Variables and mixins
+@import "variables";
+@import "mixins";
+
+/*! Spectre.css v#{$version} | MIT License | github.com/picturepan2/spectre */
+// Reset and dependencies
+@import "normalize";
+@import "base";
+
+// Elements
+@import "typography";
+// @import "asian";
+// @import "tables";
+@import "buttons";
+@import "forms";
+@import "labels";
+// @import "codes";
+// @import "media";
+
+// Layout
+@import "layout";
+@import "hero";
+@import "navbar";
+
+// Components
+// @import "accordions";
+// @import "avatars";
+// @import "badges";
+// @import "breadcrumbs";
+// @import "bars";
+@import "cards";
+// @import "chips";
+// @import "dropdowns";
+// @import "empty";
+// @import "menus";
+@import "modals";
+// @import "navs";
+// @import "pagination";
+// @import "panels";
+// @import "popovers";
+// @import "steps";
+@import "tabs";
+// @import "tiles";
+// @import "toasts";
+// @import "tooltips";
+
+// Utility classes
+@import "animations";
+@import "utilities";
+
+body {
+  background-image: url('../images/graph-paper.jpg');
+}
+
+.re-slider {
+  vertical-align: middle;
+}
+
+.re-inline-form {
+  display:inline-block
+}
+
+.re-short-input {
+  width: 4rem;
+}
+
+.re-med-input {
+  width: 6rem;
+}
+
+.re-large-input {
+  width: 8rem;
+}
+
+.re-extra-large-input {
+  width: 10rem;
+}
+
+.re-subtext {
+  font-size: 0.5rem;
+}
+
+.saved-creatures {
+  text-align: center;
+}
+
+// Mobile width 100%
+.re-card-spacing {
+  text-align: left;
+  margin: 0.3rem;
+  width: 346px;
+  vertical-align: top;
+  display: inline-block;
+  box-shadow: 2px 3px 12px 0px rgba(0,0,0,0.16);
+}
+
+.re-line-title {
+  font-weight: 700;
+  color: #fff;
+  background-color: #424242;
+}
+
+.re-thin-button {
+  appearance: none;
+  background: #fff;
+  border: .05rem solid #5755d9;
+  border-radius: .1rem;
+  color: #5755d9;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  height: 1rem;
+  font-size: 0.6rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .re-card-spacing {
+    width: 100%;
+    margin: 0.3rem 0 0.3rem 0 ;
+  }
+}
