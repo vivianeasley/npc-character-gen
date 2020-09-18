@@ -8,10 +8,18 @@ function awakenedAnimal (data, awakeAnimal) {
     if (data.basic.type === "animal") {
         return html`
         <div class="form-group">
-            <label for="awakened" class="form-switch">
+            <label for="awakened" class="form-switch re-inline-b">
                 <input type="checkbox" name="awakened" name="awakened" id="awakened" checked="${data.basic.awakened}" onInput="${awakeAnimal}">
                 <i class="form-icon"></i> Awakened
             </label>
+            <div class="popover popover-right">
+            <span>&#9432;</span>
+                <div class="popover-container">
+                    <div class="re-popover-content">
+                        You can set animal to awakend but they will naturally be awakened around 3% of the time.
+                    </div>
+                </div>
+            </div>
         </div>
         `
     }
@@ -32,6 +40,19 @@ function subType (data) {
                 <option value=${subtype} selected="${data.basic.subtype === subtype}" >${subtype}</option>`)
             }
         </select>
+        ${
+            data.basic.type === "monster" ?
+            html`<div class="popover popover-bottom">
+                <span>&#9432;</span>
+                <div class="popover-container">
+                    <div class="re-popover-content">
+                        Monsters on exponential curve. High level Dragons super rare. Low level Slimes very common.
+                    </div>
+                </div>
+            </div>` :
+            ``
+        }
+
     </div>
     `
 }
@@ -71,7 +92,16 @@ export const creatureFormTemplate = function creatureFormTemplate (data, updateS
     <div class="form-group">
         <label class="form-label form-inline" for="age">Age:</label>
         <input class="form-input re-inline-form re-short-input" type="text" name="basic.age" id="age" placeholder="Age" value=${formData.basic.age}>
+        <div class="popover popover-bottom">
+            <span>&#9432;</span>
+            <div class="popover-container">
+                <div class="re-popover-content">
+                    Weighted Gaussian curve. Values to lean towards 20-30's.
+                </div>
+            </div>
+        </div>
     </div>
+
 
     <div class="form-group">
         <label for="sex" class="form-label form-inline">Sex:</label>
@@ -97,6 +127,14 @@ export const creatureFormTemplate = function creatureFormTemplate (data, updateS
     <div class="form-group">
         <label class="form-label form-inline" for="height">Height:</label>
         <input class="form-input re-inline-form re-short-input" type="text" name="physical.height" id="height" placeholder="Height" value=${formData.physical.height}>
+        <div class="popover popover-bottom">
+            <span>&#9432;</span>
+            <div class="popover-container">
+                <div class="re-popover-content">
+                    Weighted Gaussian curve. Values to lean towards 5-6 feet tall.
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="form-group">
@@ -105,18 +143,43 @@ export const creatureFormTemplate = function creatureFormTemplate (data, updateS
             <label for="fat" class="form-label form-inline">Fat:</label>
             <input type="range" min="0" max="100" value="${formData.physical.fat}" class="re-slider fat-slider" name="physical.fat" id="fat" oninput="${(e)=>{updateSliderFunct(e, "fat", data.selectedCreatureType)}}">
             <span class="fat-result">${formData.physical.fat}%</span>
+            <div class="popover popover-bottom">
+            <span>&#9432;</span>
+                <div class="popover-container">
+                    <div class="re-popover-content">
+                        Weighted Gaussian curve. Values to lean towards averages.
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="re-subtext">Male Average 14% / Female Average 18%</div>
         <div>
             <label for="muscle" class="form-label form-inline">Muscle:</label>
             <input type="range" min="0" max="100" value="${formData.physical.muscle}" class="re-slider muscle-slider" name="physical.muscle" id="muscle" oninput="${(e)=>{updateSliderFunct(e, "muscle", data.selectedCreatureType)}}">
             <span class="muscle-result">${formData.physical.muscle}%</span>
+            <div class="popover popover-bottom">
+            <span>&#9432;</span>
+                <div class="popover-container">
+                    <div class="re-popover-content">
+                        Weighted Gaussian curve. Values to lean towards averages.
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="re-subtext">Male Average 31% / Female Average 20%</div>
     </div>
 
     <div class="form-group">
-        <label class="form-label">Alignment: Ethics</label>
+        <div style="display:inline-block">Alignment:</div>
+        <div class="popover popover-right">
+        <span>&#9432;</span>
+            <div class="popover-container">
+                <div class="re-popover-content">
+                    Humans lean towards neutral & lawful/good, animals true neutral, monsters chaotic evil.
+                </div>
+            </div>
+        </div>
+        <label class="form-label">Ethics</label>
         ${
             ["lawful","neutral","chaotic"].map((ethic, i) => html`
             <label class="form-radio re-inline-form">
@@ -126,7 +189,7 @@ export const creatureFormTemplate = function creatureFormTemplate (data, updateS
             `)
         }
 
-        <label class="form-label">Alignment: Morals</label>
+        <label class="form-label">Morals</label>
         ${
             ["good","neutral","evil"].map((moral, i) => html`
             <label class="form-radio re-inline-form">
@@ -168,6 +231,14 @@ export const creatureFormTemplate = function creatureFormTemplate (data, updateS
     <div class="form-group">
         <label class="form-label form-inline" for="wealth">Wealth Score (1-100):</label>
         <input class="form-input re-inline-form re-short-input" type="text" name="flavor.wealth" id="wealth" placeholder="Wealth" value=${formData.flavor.wealth}>
+        <div class="popover popover-bottom">
+        <span>&#9432;</span>
+            <div class="popover-container">
+                <div class="re-popover-content">
+                    Exponential curve. Higher wealth values become exponentially rarer.
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="form-group">

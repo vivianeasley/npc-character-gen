@@ -1,14 +1,15 @@
-# Static Site Base
+# NPC Character Generator for Humans, Animals, and Monsters
 
-This is the start for my web projects that tend to be static sites. This uses:
-- 11ty to generate static files
-- esbuild to compile JS/TS, and minify
-- light-server to run dev server
-- SCSS rarely ever used outside of imports
-- PostCSS css post processing
--- CSSnano minification
--- Autoprefixer prefixer
+## [DEMO](https://robertpage.github.io/npc-character-gen/)
+
+Simple character generator for GM's & DM's running pen and paper role-playing games. Includes:
+- Gaussian and Exponential curves for many values such as age, type of monsters etc.
+- Built with lighterHTML
+- Saves to local storage
+- Can be used offline
+- Responsive
 
 ## To Run
 npm install
 npm run dev
+navigate to localhost:8000

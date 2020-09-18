@@ -2,7 +2,6 @@
 @import "variables";
 @import "mixins";
 
-/*! Spectre.css v#{$version} | MIT License | github.com/picturepan2/spectre */
 // Reset and dependencies
 @import "normalize";
 @import "base";
@@ -18,9 +17,9 @@
 // @import "media";
 
 // Layout
-@import "layout";
-@import "hero";
-@import "navbar";
+// @import "layout";
+// @import "hero";
+// @import "navbar";
 
 // Components
 // @import "accordions";
@@ -37,7 +36,7 @@
 // @import "navs";
 // @import "pagination";
 // @import "panels";
-// @import "popovers";
+@import "popovers";
 // @import "steps";
 @import "tabs";
 // @import "tiles";
@@ -50,6 +49,29 @@
 
 body {
   background-image: url('../images/graph-paper.jpg');
+}
+
+main {
+  min-height: calc(100vh-100px)
+}
+
+footer {
+  text-align: center;
+}
+
+.re-inline-b {
+  display: inline-block
+}
+
+.re-gen-npc-button {
+  margin: 0.3rem;
+}
+
+.re-site-icon {
+  font-size: 1.5rem;
+  transform: scale(1.5);
+  vertical-align: middle;
+  margin-left: 10px;
 }
 
 .re-slider {
@@ -92,6 +114,7 @@ body {
   vertical-align: top;
   display: inline-block;
   box-shadow: 2px 3px 12px 0px rgba(0,0,0,0.16);
+  cursor: pointer;
 }
 
 .re-line-title {
@@ -116,6 +139,11 @@ body {
   white-space: nowrap;
   height: 1rem;
   font-size: 0.6rem;
+}
+
+.re-popover-content {
+  padding: 0.8rem;
+  background: #f1f1f1;
 }
 
 @media only screen and (max-width: 600px) {
