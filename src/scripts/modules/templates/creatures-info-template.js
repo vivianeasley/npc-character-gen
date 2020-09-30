@@ -32,6 +32,16 @@ export const creatureInfoTemplate = function creatureInfoTemplate (data, deleteF
                         <div><span class="re-line-title">&nbsp;Ethics:&nbsp;</span> ${info.alignment.ethics}</div>
                         <div><span class="re-line-title">&nbsp;Morals:&nbsp;</span> ${info.alignment.morals}</div>
 
+                        ${()=>console.log(info.stats)}
+
+                        <div><span class="re-line-title">Stats:</span></div>
+                        <div><span>charisma:</span>${info.stats.charisma}</div>
+                        <div><span>constitution:</span>${info.stats.constitution}</div>
+                        <div><span>dexterity:</span>${info.stats.dexterity}</div>
+                        <div><span>intelligence</span>${info.stats.intelligence}</div>
+                        <div><span>strength:</span>${info.stats.strength}</div>
+                        <div><span>wisdom:</span>${info.stats.wisdom}</div>
+
                         <div><span class="re-line-title">&nbsp;Wealth Score(1-100):&nbsp;</span> ${info.flavor.wealth}</div>
                         <div><span class="re-line-title">&nbsp;Profession:&nbsp;</span> ${info.flavor.profession}</div>
                         <div><span class="re-line-title">&nbsp;Trait:&nbsp;</span> ${info.flavor.trait}</div>

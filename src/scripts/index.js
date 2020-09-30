@@ -6,7 +6,7 @@ import {store} from "./modules/local-storage"
 window.onload = function() {
   checkAccess();
   async function checkAccess () {
-    await store.setItem('npcs', []);
+    // await store.setItem('npcs', []);
     const savedNpcs = await store.getItem('npcs');
     if (savedNpcs) {
       init(savedNpcs);
