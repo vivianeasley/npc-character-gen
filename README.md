@@ -1,6 +1,6 @@
 # NPC Character Generator for Humans, Animals, and Monsters
 
-## [DEMO](https://robertpage.github.io/npc-character-gen/)
+## [DEMO](https://vivianeasley.github.io/npc-character-gen/)
 
 Simple character generator for GM's & DM's running pen and paper role-playing games. Includes:
 - Gaussian and Exponential curves for many values such as age, type of monsters etc.
